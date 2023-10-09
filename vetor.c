@@ -2,7 +2,6 @@
 int main (){
     int i;
     int n;
-    int q;
     scanf("%d",&n);
     int v[n];
     for(i=0;i<n;i++){
