@@ -11,3 +11,6 @@ int main() {
 
     return 0;
 }
+
+// se declarar um ponteiro e apontar para x, e no printf voce colocar apenas p , ele ira imprimir o endereço da memoria de x
+// agora, se colocar no printf *p, irá imprimir o valor de x
