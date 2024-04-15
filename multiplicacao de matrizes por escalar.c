@@ -1,51 +1,63 @@
 #include <stdio.h>
 
-#define MAX_ROWS 100
-#define MAX_COLS 100
+#define MAX_LINHAS 100
+#define MAX_COLUNAS 100
 
-void scalarMultiply(int matrix[MAX_ROWS][MAX_COLS], int rows, int cols, int scalar) {
+// Função para multiplicar uma matriz por um escalar
+void multiplicacaoPorEscalar(int matriz[MAX_LINHAS][MAX_COLUNAS], int linhas, int colunas, int escalar) {
     int i, j;
 
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            matrix[i][j] *= scalar;
+    // Loop para percorrer cada elemento da matriz
+    for (i = 0; i < linhas; i++) {
+        for (j = 0; j < colunas; j++) {
+            // Multiplica o elemento da matriz pelo escalar
+            matriz[i][j] *= escalar;
         }
     }
 }
 
-void displayMatrix(int matrix[MAX_ROWS][MAX_COLS], int rows, int cols) {
+// Função para exibir uma matriz
+void exibeMatriz(int matriz[MAX_LINHAS][MAX_COLUNAS], int linhas, int colunas) {
     int i, j;
 
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            printf("%d ", matrix[i][j]);
+    // Loop para percorrer cada elemento da matriz
+    for (i = 0; i < linhas; i++) {
+        for (j = 0; j < colunas; j++) {
+            // Imprime o elemento da matriz seguido de um espaço
+            printf("%d ", matriz[i][j]);
         }
+        // Imprime uma nova linha após cada linha da matriz
         printf("\n");
     }
 }
 
 int main() {
-    int rows, cols, scalar;
-    int matrix[MAX_ROWS][MAX_COLS];
+    int linhas, colunas, escalar;
+    int matriz[MAX_LINHAS][MAX_COLUNAS];
     int i, j;
 
+    // Solicita ao usuário as dimensões da matriz
     printf("Digite o número de linhas e colunas da matriz: ");
-    scanf("%d %d", &rows, &cols);
+    scanf("%d %d", &linhas, &colunas);
 
+    // Solicita ao usuário os elementos da matriz
     printf("Digite os elementos da matriz:\n");
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            scanf("%d", &matrix[i][j]);
+    for (i = 0; i < linhas; i++) {
+        for (j = 0; j < colunas; j++) {
+            scanf("%d", &matriz[i][j]);
         }
     }
 
+    // Solicita ao usuário o valor do escalar
     printf("Digite o valor do escalar: ");
-    scanf("%d", &scalar);
+    scanf("%d", &escalar);
 
-    scalarMultiply(matrix, rows, cols, scalar);
+    // Chama a função para multiplicar a matriz pelo escalar
+    multiplicacaoPorEscalar(matriz, linhas, colunas, escalar);
 
+    // Imprime o resultado da multiplicação por escalar
     printf("O resultado da multiplicação da matriz por escalar é:\n");
-    displayMatrix(matrix, rows, cols);
+    exibeMatriz(matriz, linhas, colunas);
 
     return 0;
 }
