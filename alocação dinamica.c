@@ -1,5 +1,5 @@
-// Escreva uma função que recebe um inteiro N e retorna um vetor alocado 
-// dinamicamente contendo N valores inteiros dados por: {1, 2, 3, 4, 5, 6, … N}
+//Escreva uma função que recebe um inteiro N e um vetor V de N elementos e 
+//retorna um vetor alocado dinamicamente contendo N valores inteiros dados por
 
 #include <stdio.h>
 #include <stdlib.h>
